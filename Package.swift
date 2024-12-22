@@ -5,7 +5,13 @@ import CompilerPluginSupport
 
 let package = Package(
 	name: "Superman",
-	platforms: [.macOS(.v10_15), .iOS(.v13), .tvOS(.v13), .watchOS(.v6), .macCatalyst(.v13)],
+	platforms: [
+		.macOS(.v10_15),
+		.iOS(.v13),
+		.tvOS(.v13),
+		.watchOS(.v6),
+		.macCatalyst(.v13),
+	],
 	products: [
 		.library(
 			name: "Superman",
@@ -18,13 +24,15 @@ let package = Package(
 	],
 	dependencies: [
 		.package(url: "https://github.com/apple/swift-syntax.git", from: "600.0.0"),
+		.package(url: "https://github.com/DavidSkrundz/SyntaxEditor", from: "1.0.0"),
 	],
 	targets: [
 		.macro(
 			name: "SupermanMacros",
 			dependencies: [
+				.product(name: "SyntaxEditor", package: "SyntaxEditor"),
 				.product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
-				.product(name: "SwiftCompilerPlugin", package: "swift-syntax")
+				.product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
 			]
 		),
 		.target(name: "Superman", dependencies: ["SupermanMacros"]),

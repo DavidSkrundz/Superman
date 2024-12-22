@@ -1,50 +1,27 @@
 import Superman
 
 class Base {
-	func superFirst() {
-		print("Base superFirst")
-	}
-
-	func superFirstArgs(_ b: Bool, i: Int, double d: Double) {
-		print("Base superFirstArgs (\(b), \(i), \(d))")
-	}
-
-	func superLast() {
-		print("Base superLast")
-	}
-
-	func superLastArgs(_ b: Bool, i: Int, double d: Double) {
-		print("Base superLastArgs (\(b), \(i), \(d))")
+	func function(_ b: Bool, i: Int, double d: Double) {
+		print("Base: (\(b), \(i), \(d))")
 	}
 }
 
 class Child: Base {
-	@SuperFirst
-	override func superFirst() {
-		print("Child superFirst")
-	}
-
-	@SuperFirst
-	override func superFirstArgs(_ b: Bool, i: Int, double d: Double) {
-		print("Child superFirstArgs (\(b), \(i), \(d))")
-	}
-
-	@SuperLast
-	override func superLast() {
-		print("Child superLast")
-	}
-
-	@SuperLast
-	override func superLastArgs(_ b: Bool, i: Int, double d: Double) {
-		print("Child superLastArgs (\(b), \(i), \(d))")
+	@Super
+	override func function(_ b: Bool, i: Int, double d: Double) {
+		#super
+		#super()
+		#super(true)
+		#super(false, i: 3)
+		#super(true, i: 5, double: 4.4)
+		#super(i: 7)
+		#super(i: 9, double: 6.6)
+		#super(double: 8.8)
 	}
 }
 
 func main() {
 	let child = Child()
-	child.superFirst()
-	child.superLast()
-	child.superFirstArgs(true, i: 1, double: 0.1)
-	child.superLastArgs(false, i: 0, double: 1.0)
+	child.function(false, i: 1, double: 2.2)
 }
 main()

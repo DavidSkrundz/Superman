@@ -1,13 +1,31 @@
 {
-  "originHash" : "e51397b3369f3d57e433298148acc6f90a2116f05c1952cc811f11150b1ce7c1",
+  "originHash" : "05ebc4034c72822748df7a76b2dd73bd1b06715ac28e93b059a112e6ca8a47b3",
   "pins" : [
+    {
+      "identity" : "forwarding",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DavidSkrundz/Forwarding.git",
+      "state" : {
+        "revision" : "ac91971318f1332e253bc5cc23ab296c6792d4f7",
+        "version" : "1.0.0"
+      }
+    },
     {
       "identity" : "swift-syntax",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-syntax.git",
       "state" : {
-        "revision" : "cb53fa1bd3219b0b23ded7dfdd3b2baff266fd25",
-        "version" : "600.0.0"
+        "revision" : "0687f71944021d616d34d922343dcef086855920",
+        "version" : "600.0.1"
+      }
+    },
+    {
+      "identity" : "syntaxeditor",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DavidSkrundz/SyntaxEditor",
+      "state" : {
+        "revision" : "e6c46acb58e6b981bd1a820101119801f33c0d82",
+        "version" : "1.0.0"
       }
     }
   ],
